@@ -10,19 +10,19 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:debug-print.helloWorld"
+    "onCommand:debug-print.add-debug"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "debug-print.helloWorld",
-        "title": "Hello World"
+        "command": "debug-print.add-debug",
+        "title": "Add debug line"
       }
     ],
     "keybindings": [
       {
-        "command": "debug-print.helloWorld",
+        "command": "debug-print.add-debug",
         "key": "ctrl+shift+d",
         "when": "editorTextFocus"
       }

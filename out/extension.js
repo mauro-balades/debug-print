@@ -13,10 +13,16 @@ function activate(context) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('debug-print.helloWorld', () => {
-        // The code you place here will be executed every time your command is executed
+    let disposable = vscode.commands.registerCommand('debug-print.add-debug', () => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) {
+            return;
+        }
+        editor.selections.map((selection, i) => {
+        });
         // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World from debug-print!');
+        if (editor.selections.length > 0)
+            vscode.window.showInformationMessage(`Added ${editor.selections.length} debug point${editor.selections.length > 0 ? 's' : ''}!`);
     });
     context.subscriptions.push(disposable);
 }
